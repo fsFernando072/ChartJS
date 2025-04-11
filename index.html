@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Atividade ChartJS </title>
+        <link rel="stylesheet" href="css/estilos.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <header>
+            <section class="container">
+                <h1> Atividade ChartJS </h1>
+            </section>
+        </header>
+
+        <main>
+            <section class="container">
+                <section class="grafico">
+                    <canvas id="graficoLinhas"></canvas>
+                </section>
+                <section class="grafico">
+                    <canvas id="graficoBarras"></canvas>
+                </section>
+            </section>
+        </main>
+
+        <footer>
+            <section class="container">
+                <p> &copy; Fernando - 2025 </p>
+            </section>
+        </footer>
+    </body>
+
+    <script>
+        const labels = [
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00'
+        ];
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                    label: 'Temperatura',
+                    backgroundColor: '#ff0000',
+                    borderColor: '#ff0000',
+                    data: [30, 29, 28, 25, 22, 23]
+                }, 
+                {
+                    label: 'Umidade',
+                    backgroundColor: '#0000ff',
+                    borderColor: '#0000ff',
+                    data: [80, 82, 80, 85, 80, 83]
+                }
+            ]
+            
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {}
+        }
+
+        const graficoLinhas = new Chart(
+            document.getElementById('graficoLinhas'),
+            config
+        );
+
+    </script>
+</html>
