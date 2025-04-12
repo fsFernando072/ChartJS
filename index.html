@@ -17,9 +17,11 @@
         <main>
             <section class="container">
                 <section class="grafico">
+                    <h1> Temperatura e Umidade da SPTech </h1>
                     <canvas id="graficoLinhas"></canvas>
                 </section>
                 <section class="grafico">
+                    <h1> Temperatura e Umidade Média da SPTech </h1>
                     <canvas id="graficoBarras"></canvas>
                 </section>
             </section>
@@ -33,7 +35,7 @@
     </body>
 
     <script>
-        const labels = [
+        const labelsLinha = [
             '12:00',
             '13:00',
             '14:00',
@@ -42,8 +44,17 @@
             '17:00'
         ];
 
-        const data = {
-            labels: labels,
+        const labelsBarra = [
+            'Janeiro',
+            'Fevereiro',
+            'Março',
+            'Abril',
+            'Maio',
+            'Junho'
+        ];
+
+        const dataLinha = {
+            labels: labelsLinha,
             datasets: [{
                     label: 'Temperatura',
                     backgroundColor: '#ff0000',
@@ -57,18 +68,45 @@
                     data: [80, 82, 80, 85, 80, 83]
                 }
             ]
-            
         };
 
-        const config = {
+        const dataBarra = {
+            labels: labelsBarra,
+            datasets: [{
+                    label: 'Temperatura Média',
+                    backgroundColor: '#ff0000',
+                    borderColor: '#ff0000',
+                    data: [22, 24, 27, 23, 20, 18]
+                }, 
+                {
+                    label: 'Umidade Média',
+                    backgroundColor: '#0000ff',
+                    borderColor: '#0000ff',
+                    data: [90, 89, 93, 87, 88, 82]
+                }
+            ]
+        };
+
+        const configLinha = {
             type: 'line',
-            data: data,
+            data: dataLinha,
+            options: {}
+        }
+
+        const configBarra = {
+            type: 'bar',
+            data: dataBarra,
             options: {}
         }
 
         const graficoLinhas = new Chart(
             document.getElementById('graficoLinhas'),
-            config
+            configLinha
+        );
+
+        const graficoBarras = new Chart(
+            document.getElementById('graficoBarras'),
+            configBarra
         );
 
     </script>
