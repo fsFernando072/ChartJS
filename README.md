@@ -12,6 +12,7 @@
 ## Tecnologias Utilizadas
 1. [VSCode](https://code.visualstudio.com)
 2. [GitHub](https://github.com)
+3. [ChartJS](https://www.chartjs.org)
 
 ## Autor
 - Fernando Ferreira da Silva 
